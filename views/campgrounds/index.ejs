@@ -1,0 +1,32 @@
+<%- include ('../partials/header') -%>
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="container">
+    <header class="jumbotron" style="background-color: #fff5d7; border-radius: 0.5rem; padding: 2rem; margin-bottom: 2rem; margin-top: 2rem;">
+        <div class="container">
+            <h1>Welcome to Innter</h1>
+            <p>View our hand-picked restaurants from all over the city</p>
+            <br>
+            <p>
+                <a class="text-decoration-none" href="/campgrounds/new">Add New Restaurant &#x2192;</a>
+            </p>
+        </div>
+    </header>
+    <div class="row text-centre" style="display: flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= campground.image %>" class="card-img-top">
+                    <div class="card-body" style="text-align: center;">
+                      <h6 class="card-text"><%= campground.name %></h6>
+                    </div>
+                    <p style="text-align: center;">
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-dark">See more</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include ('../partials/footer') -%>
