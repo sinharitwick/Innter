@@ -19,8 +19,8 @@ var commentRoutes   = require("./routes/comments"),
     indexRoutes     = require("./routes/index");
 
 //(<--local-->)
-mongoose.connect("mongodb://localhost/yelp_camp");
-//mongoose.connect("mongodb+srv://desinha:yummy@cluster0.h2bcr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+// mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb+srv://desinha:yummy@cluster0.h2bcr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 //(<--primary-->) mongoose.connect("mongodb+srv://desinha:milan@cluster0.a1qcb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
