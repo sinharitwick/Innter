@@ -20,7 +20,8 @@ var commentRoutes   = require("./routes/comments"),
 
 //(<--local-->)
 // mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb+srv://desinha:yummy@cluster0.h2bcr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://desinha:yummy@cluster0.h2bcr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://desinha:yummy@cluster0.a1qcb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 //(<--primary-->) mongoose.connect("mongodb+srv://desinha:milan@cluster0.a1qcb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -56,3 +57,5 @@ app.use("/campgrounds", campgroundRoutes); //will take all campground routes fro
 app.listen(process.env.PORT || 3000, function(req, res){
     console.log("Innter is running...");
 });
+
+module.exports = app;
